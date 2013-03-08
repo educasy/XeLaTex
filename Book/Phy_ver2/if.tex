@@ -1,0 +1,110 @@
+\documentclass[a4paper,12pt]{book}
+\input{premble.tex}
+%\usepackage{calculator}
+\usepackage{fmtcount}
+\usepackage{xifthen}
+\begin{document}
+
+%\newcommand{\isitthree}[1] { \ifnum#1=3 number #1 is 3 \else number #1 is not 3 \fi }
+%We know that \isitthree{33}
+
+%\newcounter{mycounter}%
+%\newcommand{\printcntr}{%
+%  \stepcounter{mycounter}%
+%  p1\padzeroes[4]{\decimal{mycounter}}% 
+%}
+
+%\printcntr
+
+%\newcounter{tt}
+%\newcommand{\pp}{
+%	\ifthenelse{\themycounter<10}
+%	{p1\padzeroes[4]{\decimal{tt}}\\}
+%	{NNNNNN\\}
+%	\stepcounter{tt}
+%}
+
+\newif\ifrunjc % define a logical variable ชื่อ runjc
+\runjctrue % กำหนดให้ runjc เป็น true --> พิมพ์รหัสที่ข้อ + เนื้อหา
+%\runjcfalse % กำหนดให้ runjc เป็น false --> ไม่พิมพ์รหัสที่ข้อ + เนื้อหา
+
+\newcounter{runj} % กำหนด counter ใหม่สำหรับ jote ชื่อ runj
+\setcounter{runj}{1} % กำหนดค่าเริ่มต้น counter
+\newcounter{runc} % กำหนด counter ใหม่สำหรับ content ชื่อ runc
+\setcounter{runc}{1} % กำหนดค่าเริ่มต้น counter
+\newcommand{\runningj}{% กำหนดคำสั่งพิมพ์รหัสท้ายโจทย์ชื่อ \runningj
+	\ifrunjc
+		\ovalbox{p1\padzeroes[4]{\decimal{runj}}} \\ \stepcounter{runj}
+	\fi
+}
+\newcommand{\runningc}{% กำหนดคำสั่งพิมพ์รหัสท้ายเนื้อหาชื่อ \runningc
+	\ifrunjc
+		\ovalbox{p2\padzeroes[4]{\decimal{runc}}} \\ \stepcounter{runc}
+	\fi
+}
+
+\noindent
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningj
+\runningc
+\runningc
+\runningc
+\runningc
+\runningc
+\runningc
+\runningc
+\runningc
+\runningc
+
+%\newcounter{mycount}
+%\noindent\whiledo{\themycount<10}{%
+%  \ifthenelse{\isodd{\thepage}}%
+%    {Odd\\}%
+%    {Even\\}%
+%  \stepcounter{mycount}%
+%}
+
+
+%\newcommand{\running}{\textbf{XXX}}
+
+%\COPY{1}{\StartVal}
+%\COPY{\StartVal}{\ActVal}
+%\COPY{0}{\TempVal}
+%ActVal is ---- \ActVal ----- \\
+%TempVal is ---- \TempVal ----- \\
+%%xxxxxxxxxx p1000\StartVal
+%\ADD{1}{\TempVal}{\TempVal}
+%\COPY{\res}{\TempVal}
+%\ifthenelse{\equal{\TempVal}{0}}{Yessss}{Nooooo}\\
+%TempVal is ---- \TempVal ----- \\
+%\running \\
+%p1\padzeroes[3]\StartVal
+
+%\newcommand{\zzz}{ 
+%\ifnum\StartVal<10 
+%	\ADD{1}{\StartVal}{\TTT}
+%\fi
+%	p1\padzeroes[4]\TTT
+	%StartVal is ---- \StartVal ----- \\
+%}
+%	p1\padzeroes[4]\StartVal
+%\zzz
+%\zzz
+%\zzz
+%\zzz
+%\zzz
+%\zzz
+%\zzz
+\end{document}

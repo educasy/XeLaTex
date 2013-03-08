@@ -1,0 +1,66 @@
+%\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,12pt]{report}
+\input{premble.tex}
+\pagestyle{fancy}
+\fancyhead[L]{ติวสบายฟิสิกส์}
+\fancyhead[R]{www.pec9.com}
+% ------- เอารูปวางตรงไหนก็ได้ในเอกสาร ---------
+% ------- ใช้ทำเส้นข้างร่วมกับ fancyhdr ----------
+\usepackage{eso-pic,picture}
+\usepackage[absolute]{textpos}
+    \setlength{\TPHorizModule}{10mm}% 1 generic horizontal unit is equivalent to 10mm
+    \setlength{\TPVertModule}{10mm}% 1 generic vertical unit is equivalent to 10mm
+    \textblockorigin{0mm}{0mm}% top left corner set as origin
+\newcommand{\mytikz}{\tikz \draw (0,0)--(0,-20);}
+\fancyfoot[LO]{ \begin{textblock}{3}(17,2) \mytikz \end{textblock} }
+\fancyfoot[RE]{ \begin{textblock}{3}(1.1,2) \mytikz \end{textblock} }
+% ----------------- จบ ---------------------
+%\setlist[enumerate,1]{leftmargin=*,resume} % ตั้งให้ enumerate level 1 ไม่ indent และต่อข้ออัตโนมัติ โดยไม่ต้องใช้ counter
+\begin{document}
+%\mainmatter % สำหรับ book
+\chapter{การเคลื่อนที่}
+\section{การเคลื่อนที่แนวตรง}
+\begin{c2}\input{content-1.tex}\end{c2}
+\input{jote-1.tex}
+\input{jote-2.tex}
+\input{jote-3.tex}
+\begin{c2}\input{content-2.tex}\end{c2}
+\input{jote-4.tex}
+\input{jote-5.tex}
+\input{jote-6.tex}
+\input{jote-7.tex}
+\input{jote-8.tex}
+\begin{c2}\input{content-3.tex}\end{c2}
+\input{jote-9.tex}
+\input{jote-10.tex}
+\begin{c2}\input{content-4.tex}\end{c2}
+\input{jote-15.tex}
+\input{jote-16.tex}
+\begin{c2}\input{content-5.tex}\end{c2}
+\input{jote-17.tex}
+\begin{c2}\input{content-6.tex}\end{c2}
+\input{jote-18.tex}
+\input{jote-19.tex}
+\begin{c2}\input{content-7.tex}\end{c2}
+\input{jote-22.tex}
+\input{jote-23.tex}
+\section{การเคลื่อนที่แบบโปรเจกไทล์}
+\begin{c2}\input{content-8.tex}\end{c2}
+\input{jote-26.tex}
+\begin{c2}\input{content-9.tex}\end{c2}
+\input{jote-28.tex}
+\section{การเคลื่อนที่แบบวงกลม}
+\begin{c2}\input{content-10.tex}\end{c2}
+\input{jote-33.tex}
+\begin{c2}\input{content-11.tex}\end{c2}
+\input{jote-34.tex}
+\begin{c2}\input{content-12.tex}\end{c2}
+\input{jote-38.tex}
+\section{การเคลื่อนที่แบบฮาร์มอนิกอย่างง่าย}
+\begin{c2}\input{content-13.tex}\end{c2}
+\input{jote-40.tex}
+\begin{c2}\input{content-14.tex}\end{c2}
+\input{jote-41.tex}
+
+
+\end{document}

@@ -1,0 +1,25 @@
+\documentclass[a4paper,12pt,landscape]{article}
+\input{premble.tex}
+%\input{grid.tex}
+\usepackage{pst-barcode}
+\pagestyle{empty}
+
+\newcommand{\MakeQR}[1]{
+    \begin{minipage}{.8in}
+        \begin{center}
+            \begin{pspicture}(.8in,.8in)
+                \psbarcode{http://books.educasy.com/p/#1}{eclevel=M width=0.8 height=0.8 }{qrcode}
+            \end{pspicture}
+            \raisebox{2pt}{{\codeB #1}}
+        \end{center} 
+    \end{minipage}
+}
+
+\begin{document}
+	\begin{tikzpicture}
+		\node[fill=white,draw=OldLace] at (2,4) {\MakeQR{P20002}}; 
+		\node[fill=white,draw=OldLace] at (6,4) {\MakeQR{P10002}}; 
+		\node[fill=white,draw=OldLace] at (10,4) {\MakeQR{P10003}}; 
+	\end{tikzpicture}
+
+\end{document}

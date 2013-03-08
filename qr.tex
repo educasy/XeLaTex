@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{article}
+\input{premble.tex}
+\usepackage{pst-barcode}
+\pagestyle{empty}
+\begin{document}
+	%\begin{tabular}{|c|}  \hline
+	%	\Gape[6pt]{
+	%	\begin{pspicture}(1in,1in)
+    %   	\psbarcode{http://books.educasy.com/p/p000006}{eclevel=M width=1.0 height=1.0}{qrcode}
+	%	\end{pspicture}
+	%	} \\ 
+	%	\hline
+	%	p000006 \\ 
+	%	\hline
+	%\end{tabular}
+	\framebox[0.9in]{
+	\begin{minipage}{.8in}
+		\begin{center}
+			\begin{pspicture}(.8in,.8in)
+    	   		\psbarcode{http://books.educasy.com/p/p000006}{eclevel=M width=0.8 height=0.8 }{qrcode}
+			\end{pspicture}
+			\raisebox{5pt}{p000006}
+		\end{center} 
+	\end{minipage}
+	} 
+	%\setlength{\tabcolsep}{1pt}
+	%\setlength{\extrarowheight}{4pt}
+	%\begin{tabular}{|c|}  \hline
+		%\Gape[1pt]{
+	%	\begin{pspicture}(.8in,.8in)
+    %    	\psbarcode{http://books.educasy.com/p/p000006}{eclevel=M width=0.8 height=0.8 }{qrcode}
+	%	\end{pspicture}
+		%} \\
+	%	\\ \hline
+	%	p000006 \\ 
+	%	\hline
+	%\end{tabular}
+	
+	%\fbox{
+	%	\begin{minipage}{.9in}	
+	%		\begin{pspicture}(.8in,.8in)
+    %	    	\psbarcode{http://books.educasy.com/p/p000006}{eclevel=M width=0.8 height=0.8 }{qrcode}
+	%		\end{pspicture}
+	%	\end{minipage}
+	%}
+\end{document}

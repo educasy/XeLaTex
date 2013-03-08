@@ -1,0 +1,46 @@
+\documentclass[a4paper,12pt]{book} 
+\usepackage{fontspec}
+\usepackage{xunicode,xltxtra}
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip = 0pt plus 1pt 
+\defaultfontfeatures{Scale=1.23}
+\renewcommand{\baselinestretch}{1.2}
+\setmainfont{TH Sarabun New}
+
+\newfontfamily\blanch{Blanch Condensed} % ตั้งชื่อฟอนต์ใหม่เพื่อให้ง่ายต่อการใช้งาน เผื่อว่าในเอกสารต้องการให้มีหลายฟอนต์ เวลาใช้ก็ {\Kodchasal ข้อความต่าง ๆ}
+\newfontfamily\quark{Quark}
+\newfontfamily\sig{Signika}
+
+\usepackage{tikz}
+\usepackage[explicit]{titlesec}
+\usepackage{geometry}
+\usepackage{blindtext}
+\usepackage{lmodern}  % ปรับขนาด font ด้วย {\fontsize{52}{58} TEXT}
+\usepackage{moresize} % เพิ่ม \HUGE , \ssmall
+
+\newcommand*\chapterlabel{}
+\titleformat{\chapter}
+	{\gdef\chapterlabel{}
+    \normalfont\HUGE}
+    %{\gdef\chapterlabel{\thechapter\ }}{0pt}               % --- มีเลขบท ---
+    {\gdef\chapterlabel{\phantom{}}}{0pt}                   % --- เอาเลขบทออก ทำเลขบทเอง ---
+    {\begin{tikzpicture}[remember picture,overlay]
+        \node[yshift=-3cm] at (current page.north west)
+        {\begin{tikzpicture}[remember picture, overlay]
+            \draw [line width=2mm] (4.5,-2.2) -- (4.5,2.2) node[sloped,midway,above=-.2cm,font=\fontsize{52}{58}\blanch]{{\color{red}C}HAPTER}; % \blanch = ชื่อฟอนต์ กำหนดเองใน premble
+            \draw [line width=2mm] (4.4,-2.2) -- (17,-2.2);
+            \node [font=\fontsize{100}{108}] at (10.5,0) {\sig\color{black!10} \thechapter}; % sig = ชื่อฟอนต์ กำหนดเองใน premble
+            \node  at (10.5,0) {\quark\textbf{\color{blue!20}\chapterlabel#1}}; % quark = ชื่อฟอนต์ กำหนดเองใน premble
+        \end{tikzpicture}
+        };  
+    \end{tikzpicture}
+    \thispagestyle{empty}}       % ----- เอาเลขหน้าออกจากหน้าที่มี Chapter --------------
+\titlespacing*{\chapter}{0pt}{0pt}{0cm} % คุมระยะ chapter 
+
+\pagestyle{empty}
+\begin{document}
+\chapter{ทดสอบบทที่ \thechapter}
+\blindtext
+\chapter{ทดสอบบทที่ \thechapter}
+\blindtext
+\end{document}

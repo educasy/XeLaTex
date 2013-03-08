@@ -1,0 +1,26 @@
+\documentclass[a4paper,12pt]{article}
+\input{premble.tex}
+\usepackage{enumitem}
+\usepackage{lipsum}
+
+\newenvironment{jote}
+	{\begin{enumerate}[leftmargin=0cm,itemindent=.5cm,labelwidth=\itemindent,labelsep=0cm,align=left]}
+	{\end{enumerate}}
+
+
+\begin{document}
+\lipsum[1]
+
+        \begin{enumerate}[leftmargin=*]
+                \item \lipsum[1]
+                \item \lipsum[1]
+                \item \lipsum[1]
+        \end{enumerate}
+	
+	\begin{jote}
+		\item \lipsum[2]  
+		\item \lipsum[2]
+		\item \lipsum[2]
+	
+	\end{jote}
+\end{document}

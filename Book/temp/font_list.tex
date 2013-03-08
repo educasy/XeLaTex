@@ -1,0 +1,45 @@
+\documentclass{article}
+\usepackage{tikz}
+\usepackage{fontspec}
+\def\myshift#1{\raisebox{2pt}}
+\newfontfamily\nanum{NanumGothic}
+\newfontfamily\maven{Maven Pro Light}
+\newfontfamily\blanch{Blanch Condensed}
+\newfontfamily\blanchI{Blanch Condensed Inline}
+\newfontfamily\blanchCI{Blanch Caps Light}
+\newfontfamily\blanchL{Blanch Condensed Light}
+\newfontfamily\blanchC{Blanch Caps}
+\newfontfamily\blanchCI{Blanch Caps Inline}
+\newfontfamily\codeL{Code Light}
+\newfontfamily\codeB{Code Bold}
+\newfontfamily\fabrica{Fabrica}
+\newfontfamily\scifly{SciFly}
+\newfontfamily\sket{Sketchetik}
+
+\usetikzlibrary{decorations.text}
+\begin{document}
+	\begin{tikzpicture}
+    \draw [help lines](0,0) rectangle (10,10) [step=1cm] (0,0) grid (10,10);
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\nanum\large\myshift|CHAPTER }}}] (1,6) -- (1,8);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\maven\large\myshift|CHAPTER }}}] (2,6) -- (2,8);
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\blanch\Huge\myshift|CHAPTER }}}] (3,6) -- (3,8);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\blanchI\large\myshift|CHAPTER }}}] (4,6) -- (4,8);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\blanchCI\large\myshift|CHAPTER }}}] (5,6) -- (5,8);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\blanchL\large\myshift|CHAPTER }}}] (6,6) -- (6,8);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\blanchC\large\myshift|CHAPTER }}}] (7,6) -- (7,8);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\blanchCI\large\myshift|CHAPTER }}}] (8,6) -- (8,8);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\codeL\large\myshift|CHAPTER }}}] (3,3) -- (3,5);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\codeB\large\myshift|CHAPTER }}}] (4,3) -- (4,5);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\fabrica\large\myshift|CHAPTER }}}] (5,3) -- (5,5);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\scifly\large\myshift|CHAPTER }}}] (6,3) -- (6,5);	
+	\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\sket\large\myshift|CHAPTER }}}] (7,3) -- (7,5);	
+	
+	%\node [fill=red,rounded corners=2pt,inner sep=3pt] at (1,8) {\color{white}\textbf{\large C}};
+	%\node [fill=blue,rounded corners=2pt,inner sep=3pt] at (1,7.6) {\color{white}\textbf{\large H}};
+	%\node [fill=green,rounded corners=2pt,inner sep=3pt] at (1,7.2) {\color{white}\textbf{\large A}};
+	%\node [fill=red,rounded corners=2pt,inner sep=3pt] at (1,6.8) {\color{white}\textbf{\large P}};
+	%\node [fill=blue,rounded corners=2pt,inner sep=3pt] at (1,6.4) {\color{white}\textbf{\large T}};
+	%\node [fill=green,rounded corners=2pt,inner sep=3pt] at (1,6) {\color{white}\textbf{\large E}};
+	%\node [fill=red,rounded corners=2pt,inner sep=3pt] at (1,5.6) {\color{white}\textbf{\large R}};
+    \end{tikzpicture}
+\end{document}

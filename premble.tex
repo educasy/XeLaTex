@@ -1,0 +1,72 @@
+%\usepackage{mathpazo}
+\usepackage{amsmath} % จะใช้ package ของ math อื่นใด ให้เรียกก่อน fontspec
+\usepackage{amssymb} % จะใช้ package ของ math อื่นใด ให้เรียกก่อน fontspec
+\usepackage{amsfonts} % จะใช้ package ของ math อื่นใด ให้เรียกก่อน fontspec
+\usepackage{mathspec} % เรียกใช้แค่นี้มีค่า = \usepackage[no-math]{fontspec}\usepackage{mathspec}
+\usepackage{xunicode,xltxtra}
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip = 0pt plus 1pt %
+\defaultfontfeatures{Scale=1.23}
+\renewcommand{\baselinestretch}{1.2}
+\setmainfont{TH Sarabun New}
+\newfontfamily\kodchasal{TH Kodchasal} % ตั้งชื่อฟอนต์ใหม่เพื่อให้ง่ายต่อการใช้งาน เผื่อว่าในเอกสารต้องการให้มีหลายฟอนต์ เวลาใช้ก็ {\examplefont ข้อความต่าง ๆ}
+\newfontfamily\niramit{TH Niramit AS}
+\usepackage{xcolor}
+\definecolor{MyColor}{rgb}{0.3,0.4,0.5} % กำหนดสี และชื่อที่จะใช้เรียกสีโดย xcolor
+\everymath{\displaystyle} % บังคับให้ทุกสมการเป็น displaystyle
+\usepackage{tabls}
+\usepackage{graphicx}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{wrapfig} %ตัวหนังสือล้อมรอบรูปหรือตารางได้ (wrapfigure,wraptable) *** ไม่สามารถอยู่ในพวก enumerate ได้
+\usepackage[Glenn]{fncychap}
+\usepackage{sectsty,ulem}
+\allsectionsfont{\ulemheading{\uline}}
+\makeatletter
+\def\@seccntformat#1{\csname the#1\endcsname)\quad}
+\makeatother
+\usepackage{cellspace}
+\usepackage[usenames,dvipsnames]{pstricks} 
+\usepackage{epsfig} 
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes 
+\usepackage{makecell}
+\usepackage{fancyhdr}
+\usepackage{lastpage}
+\usepackage{fancybox}
+\usepackage{multirow}
+\usepackage{calc}
+% ระยะช่องว่างหน้า+หลังเลขหรืออักษรในสมการ หน่วยเป็น mmu , 1 mmu = 1mu/1000 , 18mu = 1 em ,default = 500 mmu = 1/36 em 
+% ตัวไหนจะให้มีระยะพิเศษก็ใส่ " นำหน้า เช่น $ x^{"2} หรือใส่ทีละคำให้ใส่เป็น $ x^{\"3yz"} $
+% \setminwhitespace[XXXX] 
+\setminwhitespace[3000] 
+
+% เลือก Math Font ต่าง ๆ นา ๆ
+%\setmathsfont(Digits,Latin){Asana Math}
+%\setmathsfont(Digits,Latin){jsMath-cmr10}
+%\setmathsfont(Digits,Latin){Kerkis}
+%\setmathsfont(Digits,Latin){Neo Euler}
+%\setmathsfont(Digits,Latin){Fontin}
+%\setmathsfont(Digits,Latin){Plakken}
+%\setmathsfont(Digits,Latin){DejaVu Serif}
+%\setmathsfont(Digits,Latin){STIXGeneral}
+%\setmathsfont(Digits,Latin){CMU Bright}
+%\setmathsfont(Digits,Latin){Iwona Light}
+%\setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Iwona Light}
+%\setmathsfont(Digits,Latin,Greek){TH Sarabun New}
+%\setmathsfont(Digits,Latin,Greek){Mathmos Original}
+% ใช้ฟอนต์ OTF ในเอกสารแต่ MATH ใช้ฟอนต์ Math
+%\usepackage[no-math]{fontspec}
+
+% ใช้ฟอนต์ OTF ในเอกสารและ MATH ใช้ฟอนต์ OTF
+%\usepackage[no-math]{fontspec}
+%\usepackage{mathspec}
+%\setmainfont{TH Sarabun New}
+%\setallmainfonts(Digits,Latin,Greek){TH Sarabun New}
+\setallmainfonts(Digits,Latin,Greek){TH Sarabun New}
+
+% \setmathrm จะเปลี่ยนฟอนต์เฉพาะที่อยู่ในคำสั่ง \mathrm{.....} เท่านั้น
+%\setmathrm{TH Sarabun New}
+%\setmathsfont(Digits,Latin,Greek){TH Sarabun New}
+%\setmathfont(Digits,Latin,Greek){TH Sarabun New}

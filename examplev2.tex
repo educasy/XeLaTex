@@ -1,0 +1,118 @@
+%\documentclass[a4paper,12pt,twoside]{article}
+\documentclass[a4paper,12pt]{book}
+\input{premble.tex}
+%\usepackage[top=1in,bottom=1in,left=1.2in,right=2in,showframe]{geometry}
+\usepackage[top=1in,bottom=1in,outer=2in,inner=1.2in,heightrounded,marginparwidth=1in,marginparsep=.7in]{geometry}
+% --------- Dummy Text -----------
+\usepackage{lipsum}
+\usepackage{blindtext}
+% --------- End Dummy Text -------
+\usepackage{marginnote}
+\usepackage{paralist}
+\usepackage{enumitem} % ใช้ rusume ได้ ไม่ต้อง setcounter
+\usepackage{tikz}
+%\special{papersize=\the\paperwidth,\the\paperheight} % ตั้งหน้ากระดาษ สำหรับ DVI & PS Way
+%\usepackage{auto-pst-pdf,pst-barcode} % พิมพ์ QR Code ได้
+\pagestyle{fancy}
+\fancyhead[L]{ติวสบายฟิสิกส์}
+\fancyhead[R]{www.pec9.com}
+% ------- เอารูปวางตรงไหนก็ได้ในเอกสาร ---------
+% ------- ใช้ทำเส้นข้างร่วมกับ fancyhdr ----------
+\usepackage{eso-pic,picture}
+\usepackage[absolute]{textpos}
+    \setlength{\TPHorizModule}{10mm}% 1 generic horizontal unit is equivalent to 10mm
+    \setlength{\TPVertModule}{10mm}% 1 generic vertical unit is equivalent to 10mm
+    \textblockorigin{0mm}{0mm}% top left corner set as origin
+\newcommand{\mytikz}{\tikz \draw (0,0)--(0,-20);}
+\fancyfoot[LO]{ \begin{textblock}{3}(17,2) \mytikz \end{textblock} }
+\fancyfoot[RE]{ \begin{textblock}{3}(1.1,2) \mytikz \end{textblock} }
+% ----------------- จบ ---------------------
+
+\setlist[enumerate,1]{leftmargin=*,resume} % ตั้งให้ enumerate level 1 ไม่ indent และต่อข้ออัตโนมัติ โดยไม่ต้องใช้ counter
+
+\begin{document}
+\begin{enumerate}
+	\item \ovalbox{\textbf{p000001}} วัตถุหนึ่งเคลื่อนที่เป็นวงกลมรัศมี   14  เมตรครบหนึ่งรอบ   การกระจัดมีค่าเท่าใด \\ 
+		1.  0  เมตร	\hfill			2.  14  เมตร		\hfill\phantom{xx} \\
+		3.  44  เมตร		\hfill		4.  88   เมตร \hfill\phantom{xx}
+\end{enumerate}
+\vspace{0.8in}
+
+\marginnote{\includegraphics{p000001v2.pdf}}[-2in]
+\marginnote{\includegraphics{p000002v2.pdf}}[-0.5in]
+\marginnote{\includegraphics{p000003v2.pdf}}[1in]
+\marginnote{\includegraphics{p000004v2.pdf}}[2.5in]
+
+\begin{center}
+	\fbox{
+		\begin{minipage}{0.8\textwidth}
+			\textbf{อัตราเร็วเฉลี่ย} หาค่าได้จากอัตราส่วนระหว่างระยะทางที่เคลื่อนที่ได้กับเวลาที่ในการเคลื่อนที่ช่วงนั้น  มีหน่วยเป็นเมตรต่อวินาที ( m/s ) นั่นคือ       
+			$$ \text{อัตราเร็วเฉลี่ย} = \frac{\text{ระยะทางที่เคลื่อนที่ได้}}{\text{เวลาที่ใช้}} $$
+			\textbf{ความเร็วเฉลี่ย} หาค่าได้จากอัตราส่วนระหว่างการกระจัดของเคลื่อนที่กับเวลาที่ในการเคลื่อนที่ช่วงนั้น  มีหน่วยเป็นเมตรต่อวินาที ( m/s ) นั่นคือ
+			$$ \text{ความเร็วเฉลี่ย} = \frac{\text{การกระจัด}}{\text{เวลาที่ใช้}} $$
+			\hfill \ovalbox{\textbf{p000002}}
+		\end{minipage}
+	}
+\end{center}
+
+\begin{enumerate}
+	\item \ovalbox{\textbf{p000003}} \textbf{(แนว O-Net})  เด็กคนหนึ่งวิ่งเป็นเส้นตรงไปทางขวา  10  เมตรในเวลา  3  วินาที   จากนั้นก็หันกลับแล้ววิ่งเป็นเส้นตรงไปทางซ้ายอีก   5  เมตรในเวลา   2  วินาที   อัตราเร็วเฉลี่ยของเด็กคนนี้เป็นไปตามข้อใด \\
+		1.  1.0  เมตรต่อวินาที	\hfill							2.  3.0  เมตรต่อวินาที \hfill\phantom{xx}\\
+		3.  5.0  เมตรต่อวินาที	\hfill							4.  7.5  เมตรต่อวินาที \hfill\phantom{xx}
+\end{enumerate}
+\vspace{0.8in}
+\begin{enumerate}
+	\item \ovalbox{\textbf{p000004}} \textbf{(แนว O-Net)}  จากข้อที่ผ่านมา  ขนาดของความเร็วเฉลี่ยของเด็กคนนี้เป็นไปตามข้อใด  \\
+		1.  1.0  เมตรต่อวินาที	\hfill							2.  3.0  เมตรต่อวินาที \hfill\phantom{xx}\\
+		3.  5.0  เมตรต่อวินาที	\hfill							4.  7.5  เมตรต่อวินาที \hfill\phantom{xx}
+\end{enumerate}
+\vspace{0.8in}
+
+\newpage
+
+\begin{enumerate}
+	\item \textbf{(แนว O–net)}  ตอนเริ่มต้นวัตถุอยู่ห่างจากจุดอ้างอิงไปทางขวา  2.0  เมตร   เมื่อเวลาผ่านไป  10  	วินาที   พบว่าวัตถุอยู่ห่างจากจุดอ้างอิงไปทางซ้าย   3.0  เมตร  จงหาความเร็วเฉลี่ยของวัตถุนี้ \\
+ 		 1.  0.5  เมตรต่อวินาที 	 ทางขวา	\hfill	 			2.  0.5  เมตรต่อวินาที  ทางซ้าย \hfill\phantom{xx}\\
+ 		 3.  1.0  เมตรต่อวินาที 	 ทางขวา	\hfill	  			4.  1.0  เมตรต่อวินาที  ทางซ้าย \hfill\phantom{xx}
+\end{enumerate}
+\vspace{0.8in}
+
+\begin{enumerate}
+	\item \ovalbox{\textbf{p000005}} \textbf{(แนว มช)}  รถโดยสารเริ่มออกเดินทางจากกรุงเทพฯเวลา   22.00  น.   มาถึงเชียงใหม่เวลา 8.00 น. กำหนดให้ระยะทางจากกรุงเทพฯถึงเชียงใหม่เป็น   720  กิโลเมตร   จงหาว่ารถโดยสารคันนี้วิ่งด้วยอัตราเร็วเฉลี่ยเท่าใด \\
+		1.  10  กิโลเมตรต่อชั่วโมง		\hfill					2.  100  กิโลเมตรต่อชั่วโมง \hfill\phantom{xx}\\
+		3.  72  กิโลเมตรต่อชั่วโมง		\hfill					4.  720  กิโลเมตรต่อชั่วโมง \hfill\phantom{xx}
+\end{enumerate}
+\vspace{0.8in}
+
+\begin{center}
+	\fbox{
+		\begin{minipage}{0.8\textwidth}
+			กรณีที่วัตถุเคลื่อนที่ไปด้วยความเร็วคงที่   จะได้ว่า 
+			\begin{align*} % ให้เครื่องหมาย = ในสมการเท่ากัน และไม่มีเลขกำกับสมการ
+				\text{ระยะทางที่เคลื่อนที่ได้}  &=  \text{อัตราเร็ว}\times \text{เวลาที่ใช้เคลื่อนที่} \\
+				\text{\textbf{หรือ}}\qquad \qquad			  s  &=  v \cdot  t
+			\end{align*}
+			\begin{tabbing}
+					\textbf{เมื่อ} \quad  \=\textbf{s}  คือระยะทางที่เคลื่อนที่ได้ \quad \=หน่วยเป็นเมตร ( m ) \\
+						  				\>\textbf{v}  คืออัตราเร็วซึ่งคงที่  \> หน่วยเป็นเมตรต่อวินาที ( m/s ) \\
+						   				\>\textbf{t}  คือเวลาที่ใช้เคลื่อนที่  \> หน่วยเป็นวินาที ( s )
+			\end{tabbing}
+			\hfill \ovalbox{\textbf{p000006}}
+		\end{minipage}
+	}	
+\end{center}
+
+\begin{enumerate}
+\item รถยนต์คันหนึ่งวิ่งด้วยอัตราเร็วคงตัว   15  เมตรต่อวินาทีเป็นเวลานาน  60  วินาที  	ระยะทางที่รถยนต์คันนี้เคลื่อนที่ได้จะมีขนาดเท่ากับข้อใดต่อไปนี้ \\
+		1.  45  m		\hfill			2.  90  m			\hfill\phantom{xx}\\		
+		3.  450  m	\hfill				4.   900  m \hfill\phantom{xx}
+\end{enumerate}
+\vspace{0.8in}
+
+\marginnote{\includegraphics{p000005v2.pdf}}[-8.7in]
+\marginnote{\includegraphics{p000006v2.pdf}}[-7.2in]
+
+x tan sin dx $$ \int_{\alpha}^{\beta}x^2 \times \frac{\sin x}{\tan x} \cdot dx $$
+
+\end{document}
+

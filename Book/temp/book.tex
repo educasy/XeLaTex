@@ -1,0 +1,193 @@
+\documentclass[a4paper,12pt]{book} %\documentclass[a4paper,12pt]{scrbook}
+\input{premble.tex}
+%\input{gridBG.tex}
+% ---------- เลขหน้าที่ขอบขวา -------------------------------------
+\AddToShipoutPicture{%
+\begin{tikzpicture}[remember picture,overlay]
+	\checkoddpage
+	\ifthenelse{\boolean{oddpage}}
+	%{\node [xshift=20.5cm,yshift=5cm]  at (current page.west) [text width=1cm,fill=OliveDrab] {\color{white}\textbf{\thepage}};}
+	%{\node [xshift=0.5cm,yshift=5cm]  at (current page.west) [align=right,text width=1cm,fill=OliveDrab] {\color{white}\textbf{\thepage}};}
+	{\node [anchor=east,yshift=5cm]  at (current page.east) [text width=1.5cm,fill=OliveDrab] {\color{white}\codeB\large\textbf{\thepage}};}
+	{\node [anchor=west,yshift=5cm]  at (current page.west) [align=right,text width=1.5cm,fill=OliveDrab] {\color{white}\codeB\large\textbf{\thepage}};}
+\end{tikzpicture} }
+% ----------จบ  เลขหน้าที่ขอบขวา ----------------------------------
+
+
+% ------------------------ แถบด้านล่าง -----------------------------------------------
+\AddToShipoutPicture{%
+\begin{tikzpicture}[remember picture,overlay]
+	\node at (current page.south west)
+		{\begin{tikzpicture}[remember picture, overlay]
+			\filldraw [draw=OldLace,fill=OldLace] (0,0) rectangle (\paperwidth,4cm);
+		 \end{tikzpicture}
+		};
+\end{tikzpicture} }
+% ------------------------ จบ  แถบด้านล่าง ------------------------------------------
+
+% ------- ขีดเส้นด้านข้างเอกสาร ---------------- ใช้ทำเส้นข้างร่วมกับ fancyhdr ----------
+%\usepackage{eso-pic,picture}
+%\usepackage[absolute]{textpos}
+%    \setlength{\TPHorizModule}{10mm}% 1 generic horizontal unit is equivalent to 10mm
+%    \setlength{\TPVertModule}{10mm}% 1 generic vertical unit is equivalent to 10mm
+%    \textblockorigin{0mm}{0mm}% top left corner set as origin
+%\newcommand{\mytikz}{\tikz \draw (0,0)--(0,-20);}
+%\fancyfoot[LO]{ \begin{textblock}{3}(17,2) \mytikz \end{textblock} }
+%\fancyfoot[RE]{ \begin{textblock}{3}(1.1,2) \mytikz \end{textblock} }
+% ----------------- จบ ---------------------
+
+% -------------------------------  Chapter Style --------------------
+\usepackage[explicit]{titlesec}
+\newcommand*\chapterlabel{}
+\titleformat{\chapter}
+	{\gdef\chapterlabel{}
+		\normalfont\HUGE}
+	%{\gdef\chapterlabel{\thechapter\ }}{0pt} 				% --- มีเลขบท ---
+	{\gdef\chapterlabel{\phantom{}}}{0pt} 					% --- เอาเลขบทออก ทำเลขบทเอง ---
+	{\begin{tikzpicture}[remember picture,overlay]
+		\node[yshift=-3cm] at (current page.north west)
+		{\begin{tikzpicture}[remember picture, overlay]
+			%\draw[fill=LightSkyBlue] (0,0) rectangle (\paperwidth,3cm);
+			%\draw [thick,postaction={decorate,decoration={text along path,text align=center,text={|\blanch\Huge\CHshift|CHAPTER }}}] (3,-1) -- (3,1);
+			\draw [line width=2mm] (4.5,-2.2) -- (4.5,2.2) node[sloped,midway,above=-.2cm,font=\fontsize{52}{58}\blanch]{{\color{red}C}HAPTER};
+			\draw [line width=2mm] (4.4,-2.2) -- (17,-2.2);
+			%\node [xshift=.4\paperwidth,font=\fontsize{100}{108}] {\sig\color{black!10} \thechapter};
+			\node [font=\fontsize{100}{108}] at (10.5,0) {\sig\color{black!10} \thechapter}; 
+			%\draw (2.5,-1) node[rotate=90,font=\fontsize{52}{58}\blanch]{CHAPTER};
+			%\node [anchor=east,xshift=.9\paperwidth,rectangle, rounded corners=20pt,inner sep=11pt, fill=red!20] {\akhanake\color{white}\chapterlabel#1};
+			%\node [xshift=.6\paperwidth] {\akhanake\color{red}\chapterlabel#1};
+			\node  at (10.5,0) {\quark\textbf{\color{DarkSlateGray}\chapterlabel#1}}; % quark = ชื่อฟอนต์ กำหนดเองใน premble
+		\end{tikzpicture}
+		};
+	\end{tikzpicture}
+	\thispagestyle{empty}		% ----- เอาเลขหน้าออกจากหน้าที่มี Chapter --------------
+}
+%\titlespacing*{\chapter}{0pt}{50pt}{-60pt}
+\titlespacing*{\chapter}{0pt}{0pt}{0cm} % คุมช่องว่างระหว่างระหว่าง chapter กับ section 
+% ------------------------ End Chapter Style -----------------------------------------------------
+
+% ------------------------- หัวกระดาษ -----------------------------------------------------------------------------------------
+\pagestyle{fancy}
+\fancyhf{} % -- Clear Header & Footer ที่เป็นค่า Default ของ fancyhdr
+\renewcommand{\headrulewidth}{0pt} % เอาเส้นที่ Header ออก
+\newcommand{\BookHeadEven}{
+	\tikz{ 
+		\node[anchor=south west,fill=red!20, minimum height=2.9cm, minimum width=1cm, align=center] at (0,0)	{\color{white}\droid {\Huge{\textbf{\thechapter}}}};
+		\draw[line width=2pt,color=red!20] (0,0) -- (14.6,0);
+		\node[anchor=south east] at (14.6,0) {\color{DarkSlateGray}\huge{\textbf{www.pec9.com}}};
+	}}
+\newcommand{\BookHeadOdd}{
+	\tikz{ 
+		\draw[line width=2pt,color=red!20] (0,0) -- (14.6,0);
+		\node[anchor=south east,fill=red!20, minimum height=2.9cm, minimum width=1cm, align=center] at (14.6,0)	{\color{white}\droid {\Huge{\textbf{\thechapter}}}};
+		\node[anchor=south west] at (0,0) {\color{DarkSlateGray}\huge{\textbf{ติวสบาย ฟิสิกส์}}};
+	}}
+\usepackage[absolute]{textpos}
+    \setlength{\TPHorizModule}{10mm}% 1 generic horizontal unit is equivalent to 10mm
+    \setlength{\TPVertModule}{10mm}% 1 generic vertical unit is equivalent to 10mm
+    \textblockorigin{0mm}{0mm}% top left corner set as origin
+\fancyfoot[LO]{
+	\begin{textblock}{1}(2.54,0)
+		\BookHeadOdd
+	\end{textblock}}
+\fancyfoot[RE]{
+	\begin{textblock}{1}(3.8,0)
+		\BookHeadEven
+	\end{textblock}}
+%------------------------- จบหัวกระดาษ -----------------------------------------------------------------------------------------
+
+%\renewcommand{\chaptername}{บทที่}
+%\pagestyle{empty}
+%\renewcommand{\labelenumi}{\roman{enumi}} % level 1 เป็นเลขโรมัน
+%\setlist[enumerate,1]{leftmargin=*,resume} % ตั้งให้ enumerate level 1 ไม่ indent และต่อข้ออัตโนมัติ โดยไม่ต้องใช้ counter
+%\newcommand*\circled[1]{ \tikz[baseline=(C.base)]\node[draw,circle,inner sep=1.2pt,line width=0.2mm,](C) {#1};}
+
+
+\begin{document}
+\mainmatter % สำหรับ book
+
+%\AddToShipoutPicture{%
+%\begin{tikzpicture}[remember picture,overlay]
+%  \node[yshift=-1cm] at (current page.north west) {%
+%    \begin{tikzpicture}[remember picture, overlay]
+%      	\draw[fill=blue] (0,0) rectangle (21cm,3cm);
+%     \end{tikzpicture}
+%      };
+%\end{tikzpicture}
+%}
+
+
+\chapter{การเคลื่อนที่}
+\section{การเคลื่อนที่แนวตรง}
+\begin{c3}\input{content-1.tex}\end{c3}
+\input{jote-1.tex}
+\vfill
+\input{jote-2.tex}
+\vspace{1in}
+\input{jote-3.tex}
+\vspace{1in}
+\begin{c3}\input{content-2.tex}\end{c3}
+\input{jote-4.tex}
+\vspace{1in}
+\input{jote-5.tex}
+\vspace{1in}
+\input{jote-6.tex}
+\vspace{1in}
+\input{jote-7.tex}
+\vspace{1in}
+\input{jote-8.tex}
+\vspace{1in}
+\begin{c3}\input{content-3.tex}\end{c3}
+\input{jote-9.tex}
+\vspace{1in}
+\input{jote-10.tex}
+\vspace{1in}
+\begin{c3}\input{content-4.tex}\end{c3}
+\input{jote-15.tex}
+\vspace{1in}
+\input{jote-16.tex}
+\vspace{1in}
+\begin{c3}\input{content-5.tex}\end{c3}
+\input{jote-17.tex}
+\vspace{1in}
+\begin{c3}\input{content-6.tex}\end{c3}
+\input{jote-18.tex}
+\vspace{1in}
+\input{jote-19.tex}
+\vspace{1in}
+\begin{c3}\input{content-7.tex}\end{c3}
+\input{jote-22.tex}
+\vspace{1in}
+\input{jote-23.tex}
+\vspace{1in}
+\section{การเคลื่อนที่แบบโปรเจกไทล์}
+\begin{c3}\input{content-8.tex}\end{c3}
+\input{jote-26.tex}
+\vspace{1in}
+\begin{c3}\input{content-9.tex}\end{c3}
+\input{jote-28.tex}
+\vspace{1in}
+\newpage
+\section{การเคลื่อนที่แบบวงกลม}
+\begin{c3}\input{content-10.tex}\end{c3}
+\input{jote-33.tex}
+\vspace{1in}
+\begin{c3}\input{content-11.tex}\end{c3}
+\input{jote-34.tex}
+\vspace{1in}
+\begin{c3}\input{content-12.tex}\end{c3}
+\input{jote-38.tex}
+\vspace{1in}
+\section{การเคลื่อนที่แบบฮาร์มอนิกอย่างง่าย}
+\begin{c3}\input{content-13.tex}\end{c3}
+\input{jote-40.tex}
+\vfill
+\begin{c3}\input{content-14.tex}\end{c3}
+\input{jote-41.tex}
+\vspace{1in}
+\newpage
+\chapter{สนามของแรง}
+\begin{c3}\input{content-14.tex}\end{c3}
+\input{jote-41.tex}
+
+\end{document}

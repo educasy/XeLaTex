@@ -1,0 +1,218 @@
+%\usepackage{mathpazo}
+\usepackage{amsmath} % จะใช้ package ของ math อื่นใด ให้เรียกก่อน fontspec
+\usepackage{amssymb} % จะใช้ package ของ math อื่นใด ให้เรียกก่อน fontspec
+\usepackage{amsfonts} % จะใช้ package ของ math อื่นใด ให้เรียกก่อน fontspec
+\usepackage{mathspec} % เรียกใช้แค่นี้มีค่า = \usepackage[no-math]{fontspec}\usepackage{mathspec}
+\usepackage{xunicode,xltxtra}
+\XeTeXlinebreaklocale "th"
+\XeTeXlinebreakskip = 0pt plus 1pt %
+\defaultfontfeatures{Scale=1.23}
+\renewcommand{\baselinestretch}{1.2}
+\setmainfont{TH Sarabun New}
+\newfontfamily\kodchasal{TH Kodchasal} % ตั้งชื่อฟอนต์ใหม่เพื่อให้ง่ายต่อการใช้งาน เผื่อว่าในเอกสารต้องการให้มีหลายฟอนต์ เวลาใช้ก็ {\examplefont ข้อความต่าง ๆ}
+\newfontfamily\niramit{TH Niramit AS}
+\newfontfamily\droid{Droid Serif}
+%\usepackage[xetex,cmyk,x11names,svgnames,dvips*]{xcolor}
+%\usepackage[xetex,rgb,x11names,svgnames,dvips]{xcolor} % -- dvips,svgnames มีชื่อสีซ้ำกัน เลือกอันใดอันหนึ่ง
+\usepackage[xetex,rgb,x11names,svgnames]{xcolor}
+\definecolor{MyColor}{rgb}{0.3,0.4,0.5} % กำหนดสี และชื่อที่จะใช้เรียกสีโดย xcolor
+\everymath{\displaystyle} % บังคับให้ทุกสมการเป็น displaystyle
+% --------------- เปลี่ยน Chapter --> บทที่ ,วันที่ภาษาไทย -------------------
+\usepackage{polyglossia}
+\setdefaultlanguage{thai}
+\newfontfamily{\thaifont}[Script=thai]{TH Sarabun New}
+% ---------------------------------------------------------
+% --------- Dummy Text -----------
+\usepackage{lipsum}
+\usepackage{blindtext}
+% --------- End Dummy Text -------
+\usepackage{marginnote}
+\usepackage{paralist}
+\usepackage{enumitem,xcolor} % ใช้ rusume ได้ ไม่ต้อง setcounter
+\usepackage{tikz}
+\usetikzlibrary{shadings}
+\usetikzlibrary{decorations.text}
+\usepackage{tabls}
+\usepackage{graphicx}
+\usepackage{array}
+\usepackage{tabularx}
+\usepackage{booktabs}
+\usepackage{longtable}
+\usepackage{wrapfig} %ตัวหนังสือล้อมรอบรูปหรือตารางได้ (wrapfigure,wraptable) *** ไม่สามารถอยู่ในพวก enumerate ได้
+%\usepackage[Glenn]{fncychap}
+
+% ----------------- Font พวก chapter,section -----------------------------
+\usepackage{sectsty,ulem}
+%\allsectionsfont{\ulemheading{\uline}} % -- ชื่อ section ขีดเส้นใต้ -----------
+\sectionfont{\color{NavyBlue}}
+\subsectionfont{\color{Indigo}}
+
+
+% ---------------------- print the section numbering in the margins -----------------------------
+%\makeatletter
+%\def\@seccntformat#1{\csname the#1\endcsname)\quad} 
+%\makeatother
+% -----------------------------------------------------------------------------------------------
+
+\usepackage{eso-pic,picture}
+
+\usepackage{cellspace}
+\usepackage[usenames,dvipsnames]{pstricks} 
+\usepackage{epsfig} 
+\usepackage{pst-grad} % For gradients
+\usepackage{pst-plot} % For axes 
+\usepackage{makecell}
+\usepackage{fancyhdr}
+%\pagestyle{fancy}
+\usepackage{lastpage}
+\usepackage{fancybox}
+\usepackage{multirow}
+\usepackage{calc}
+\usepackage{multicol}
+\usepackage{multienum}
+\usepackage{framed}
+%--------------------- กล่องข้อความสวย ๆ ----------------
+\usepackage{tcolorbox}
+\tcbuselibrary{documentation,skins}
+% -----------------------------------------------------
+%\usepackage[top=1in,bottom=1in,outer=2in,inner=1.2in,heightrounded,marginparwidth=1in,marginparsep=.7in,showframe]{geometry}
+\usepackage[bottom=5cm]{geometry}
+% --------- แก้ปัญหา Command \clipbox already defined. หลังจากเพิ่ม adjustbox
+% http://www.tex.ac.uk/cgi-bin/texfaq2html?label=alreadydef
+\usepackage{savesym}
+\savesymbol{clipbox}
+% ----------------------------------------------------------------------
+\usepackage{adjustbox}
+%\restoresymbol{clipbox}
+
+
+% ระยะช่องว่างหน้า+หลังเลขหรืออักษรในสมการ หน่วยเป็น mmu , 1 mmu = 1mu/1000 , 18mu = 1 em ,default = 500 mmu = 1/36 em 
+% ตัวไหนจะให้มีระยะพิเศษก็ใส่ " นำหน้า เช่น $ x^{"2} หรือใส่ทีละคำให้ใส่เป็น $ x^{\"3yz"} $
+% \setminwhitespace[XXXX] 
+\setminwhitespace[3000] 
+
+% เลือก Math Font ต่าง ๆ นา ๆ
+%\setmathsfont(Digits,Latin){Asana Math}
+%\setmathsfont(Digits,Latin){jsMath-cmr10}
+%\setmathsfont(Digits,Latin){Kerkis}
+%\setmathsfont(Digits,Latin){Neo Euler}
+%\setmathsfont(Digits,Latin){Fontin}
+%\setmathsfont(Digits,Latin){Plakken}
+%\setmathsfont(Digits,Latin){DejaVu Serif}
+%\setmathsfont(Digits,Latin){STIXGeneral}
+%\setmathsfont(Digits,Latin){CMU Bright}
+%\setmathsfont(Digits,Latin){Iwona Light}
+%\setmathsfont(Digits,Latin,Greek)[Numbers={Lining,Proportional}]{Iwona Light}
+%\setmathsfont(Digits,Latin,Greek){TH Sarabun New}
+%\setmathsfont(Digits,Latin,Greek){Mathmos Original}
+% ใช้ฟอนต์ OTF ในเอกสารแต่ MATH ใช้ฟอนต์ Math
+%\usepackage[no-math]{fontspec}
+
+% ใช้ฟอนต์ OTF ในเอกสารและ MATH ใช้ฟอนต์ OTF
+%\usepackage[no-math]{fontspec}
+%\usepackage{mathspec}
+%\setmainfont{TH Sarabun New}
+%\setallmainfonts(Digits,Latin,Greek){TH Sarabun New}
+\setallmainfonts(Digits,Latin,Greek){TH Sarabun New}
+
+% \setmathrm จะเปลี่ยนฟอนต์เฉพาะที่อยู่ในคำสั่ง \mathrm{.....} เท่านั้น
+%\setmathrm{TH Sarabun New}
+%\setmathsfont(Digits,Latin,Greek){TH Sarabun New}
+%\setmathfont(Digits,Latin,Greek){TH Sarabun New}
+
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{%
+            \node[shape=circle,fill=blue!20,draw,inner sep=2pt] (char) {#1};}}
+
+%\setlist[enumerate,1]{leftmargin=*,resume}% ตั้งให้ enumerate level 1 ไม่ indent และต่อข้ออัตโนมัติ โดยไม่ต้องใช้ counter
+%\setlist[enumerate,1]{leftmargin=*,resume,label=\color{blue}\theenumi}% ใส่สีให้ด้วย
+\setlist[enumerate,1]{leftmargin=*,resume,label=\protect\circled{\arabic*}} % วงกลมที่ตัวเลข enumerate
+
+\newcommand{\nonet}{\textbf{(แนว O-NET) }}
+\newcommand{\ncmu}{\textbf{(แนว มช.) }}
+\newcommand{\cmu}[1]{\textbf{(มช. #1)}}
+
+% ------------------------------------ โจทย์ + รูป + Choice environment ---------------------------------------------------------------------------------------------------
+\newenvironment{ljrp} { \begin{minipage}[t]{.65\linewidth} } { \end{minipage} }
+\newenvironment{rp}[1] { \hfill \begin{adjustbox}{valign=t} \begin{minipage}[t]{.3\linewidth} \includegraphics[width=\textwidth]{#1} } { \end{minipage} \end{adjustbox} }
+\newenvironment{rjlp} { \hfill \begin{minipage}[t]{.65\linewidth} } { \end{minipage} }
+\newenvironment{lp}[1] { \begin{adjustbox}{valign=t} \begin{minipage}[t]{.3\linewidth} \includegraphics[width=\textwidth]{#1} } { \end{minipage} \end{adjustbox} }
+% เพิ่ม vspace{-5pt} ก่อน mitemxxx เพื่อลดขนาดบรรทัด
+% หรือเพิ่มก่อน choice environment
+\newenvironment{4c}[4] { \begin{multienumerate} \setlength{\labelwidth}{8pt} \mitemxxxx{#1}{#2}{#3}{#4}} { \end{multienumerate}}
+\newenvironment{2c}[4] { \begin{multienumerate} \setlength{\labelwidth}{8pt} \setlength{\itemsep}{0pt} \mitemxx{#1}{#2} \mitemxx{#3}{#4}} { \end{multienumerate}}
+\newenvironment{1c}[4] { 
+    \begin{multienumerate} 
+    \setlength{\labelwidth}{8pt} 
+    \setlength{\itemsep}{0pt} 
+    %\setlength{\parsep}{0pt} 
+    %\setlength{\topsep}{0pt} 
+    %\setlength{\partopsep}{0pt} 
+    %\setlength{\parskip}{0pt} 
+    \mitemx{#1} \mitemx{#2} \mitemx{#3} \mitemx{#4}
+} { \end{multienumerate} }
+% -----------------------------------------------------------------------------------------------------------------------------------------------------------------------
+
+%%%%% ----------- พิมพ์รหีสท้ายข้อ ----------------------------------------------
+\newcommand\mybox[2][]{\tikz[overlay]\node[fill=blue!20,inner sep=2pt, anchor=text, rectangle, rounded corners=1mm,#1] {#2};\phantom{#2}}
+\usepackage{fmtcount}
+\usepackage{xifthen,changepage}
+\newif\ifrunjc % define a logical variable ชื่อ runjc
+\runjctrue % กำหนดให้ runjc เป็น true --> พิมพ์รหัสที่ข้อ + เนื้อหา
+%\runjcfalse % กำหนดให้ runjc เป็น false --> ไม่พิมพ์รหัสที่ข้อ + เนื้อหา
+\newcounter{runj} % กำหนด counter ใหม่สำหรับ jote ชื่อ runj
+\setcounter{runj}{1} % กำหนดค่าเริ่มต้น counter
+\newcounter{runc} % กำหนด counter ใหม่สำหรับ content ชื่อ runc
+\setcounter{runc}{1} % กำหนดค่าเริ่มต้น counter
+\newcommand{\runningj}{% กำหนดคำสั่งพิมพ์รหัสท้ายโจทย์ชื่อ \runningj
+    \ifrunjc
+        \mybox{P1\padzeroes[4]{\decimal{runj}}}\stepcounter{runj}
+        %\hfill \mybox{P1\padzeroes[4]{\decimal{runj}}}\stepcounter{runj}
+        % \hfill \mybox[fill=red!20]{p1\padzeroes[4]{\decimal{runj}}}\stepcounter{runj} % เปลี่ยนสีเป็นชมพู
+    \fi
+}
+\newcommand{\runningc}{% กำหนดคำสั่งพิมพ์รหัสท้ายเนื้อหาชื่อ \runningc
+    \ifrunjc
+        % \ovalbox{p2\padzeroes[4]{\decimal{runc}}}\stepcounter{runc}
+        % \hfill\mybox{\textbf{P2\padzeroes[4]{\decimal{runc}}}}\stepcounter{runc}
+        \noindent $\triangleright\triangleright$ \textbf{P2\padzeroes[4]{\decimal{runc}}}\stepcounter{runc}
+    \fi
+}
+%%%% ----------------------------------------------------------------------
+
+% -------- Environment for Content --------------------
+\newenvironment{c1}%
+{\begin{Sbox}\begin{minipage}}%
+{\end{minipage}\end{Sbox}\begin{center}\fbox{\TheSbox}\end{center}}
+%%%%%% -Usage-  \begin{c1}{.9\textwidth}\input{content-3.tex}\end{c1} %%%%%%%
+\newenvironment{c2}%
+{\begin{tcolorbox}[title=\runningc,colback=white]}
+{\end{tcolorbox}}
+\newenvironment{c3}%
+%{\begin{tcolorbox}[title=\runningc,skin=widget,colback=Wheat!50!white,colframe=FireBrick!75!black]}
+{\begin{tcolorbox}[title=\runningc,colback=LightYellow1,colframe=OrangeRed4]}
+{\end{tcolorbox}}
+%%%%%% -Usage-  \begin{c2}\input{content-3.tex}\end{c2} %%%%%%%
+
+% -------- Environment for Jote ----------------------
+%\newenvironment{jote}
+%{\begin{enumerate}[resume] \item \runningj}
+%{\end{enumerate}}
+
+%\usepackage{anyfontsize}
+\usepackage{lmodern} 
+
+\def\CHshift#1{\raisebox{2pt}}
+
+\newfontfamily\nanum{NanumGothic}
+\newfontfamily\maven{Maven Pro Light}
+\newfontfamily\blanch{Blanch Condensed}
+\newfontfamily\blanchI{Blanch Condensed Inline}
+\newfontfamily\blanchCI{Blanch Caps Light}
+\newfontfamily\blanchL{Blanch Condensed Light}
+\newfontfamily\blanchC{Blanch Caps}
+\newfontfamily\blanchCI{Blanch Caps Inline}
+\newfontfamily\codeL{Code Light}
+\newfontfamily\codeB{Code Bold}
+\newfontfamily\fabrica{Fabrica}
+\newfontfamily\scifly{SciFly}
+\newfontfamily\sket{Sketchetik}
